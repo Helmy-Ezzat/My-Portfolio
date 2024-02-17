@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Heading } from '.'
 
 function About() {
   return (
@@ -11,7 +12,7 @@ function About() {
       transition={{ delay: 0.175 }}
       id="about"
     >
-      <h1>About me</h1>
+      <Heading>About me</Heading>
       <p className="mb-3">
         After graduating with a degree in{' '}
         <span className="font-medium">History</span>, I decided to pursue my
