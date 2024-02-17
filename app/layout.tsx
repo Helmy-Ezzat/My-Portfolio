@@ -14,10 +14,10 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
-}>) {
+}>) {  
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gray-50 text-gray-950 relative`}>
+      <body className={`${inter.className} pt-28 sm:pt-36 bg-gray-50 text-gray-950 relative`}>
         <div
           className="
         bg-[#fbe2e3] w-[31.25rem] h-[31.25rem] rounded-full
