@@ -7,7 +7,8 @@ import { NavbarBackground } from '.'
 import clsx from 'clsx'
 import useActiveSectionContext from '@/hooks/useActiveSectionContext'
 function Header() {
-  const { activeSection, setActiveSection } = useActiveSectionContext()
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext()
   return (
     <header className="relative z-[999]">
       <NavbarBackground />
@@ -41,6 +42,7 @@ function Header() {
                 )}
                 onClick={() => {
                   setActiveSection(link.name)
+                  setTimeOfLastClick(Date.now())
                 }}
               >
                 {link.name}

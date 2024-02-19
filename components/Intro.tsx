@@ -6,10 +6,13 @@ import Link from 'next/link'
 import { BsArrowRight, BsLinkedin } from 'react-icons/bs'
 import { HiDownload } from 'react-icons/hi'
 import { FaGithubSquare } from 'react-icons/fa'
+import { useSectionInView } from '@/hooks/useSectionInView'
 
 function Intro() {
+  const { ref } = useSectionInView('Home', 0.5)
   return (
     <section
+      ref={ref}
       id="home"
       className="max-w-[50rem] text-center mb-28 scroll-mt-[100rem] sm:mb-0"
     >
@@ -105,7 +108,7 @@ function Intro() {
           Download CV{' '}
           <HiDownload className="group-hover:translate-y-1 opacity-60 transition" />
         </a>
-        <div className='flex gap-2'>
+        <div className="flex gap-2">
           <a
             href="https://www.linkedin.com/in/helmy-ezzat-72a097245/"
             target="_blank"
