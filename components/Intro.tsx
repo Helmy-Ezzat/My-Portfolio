@@ -105,26 +105,28 @@ function Intro() {
           Download CV{' '}
           <HiDownload className="group-hover:translate-y-1 opacity-60 transition" />
         </a>
-        <a
-          href="https://www.linkedin.com/in/helmy-ezzat-72a097245/"
-          target="_blank"
-          className="
+        <div className='flex gap-2'>
+          <a
+            href="https://www.linkedin.com/in/helmy-ezzat-72a097245/"
+            target="_blank"
+            className="
         bg-white p-4 text-gray-700 rounded-full
         focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition
         cursor-pointer borderBlack"
-        >
-          <BsLinkedin />
-        </a>
-        <a
-          href="https://github.com/Helmy-Ezzat"
-          target="_blank"
-          className="
+          >
+            <BsLinkedin />
+          </a>
+          <a
+            href="https://github.com/Helmy-Ezzat"
+            target="_blank"
+            className="
         bg-white p-4 text-gray-700 rounded-full text-[1.35rem]
         focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition
         cursor-pointer borderBlack"
-        >
-          <FaGithubSquare />
-        </a>
+          >
+            <FaGithubSquare />
+          </a>
+        </div>
       </motion.div>
     </section>
   )
