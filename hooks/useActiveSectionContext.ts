@@ -1,4 +1,4 @@
-import { ActiveSlice } from '@/app/context/active-section-context'
+import { ActiveSlice } from '@/context/active-section-context'
 import { useContext } from 'react'
 
 const useActiveSectionContext = () => {

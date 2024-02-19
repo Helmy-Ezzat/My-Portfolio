@@ -1,4 +1,5 @@
-import { About, Divider, Intro, Projects } from './components'
+import { About, Divider, Intro, Projects } from "@/components";
+
 
 export default function Home() {
   return (
