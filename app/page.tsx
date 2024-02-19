@@ -1,5 +1,13 @@
-import { About, Courses, Divider, Intro, Projects, Skills } from "@/components";
-
+import {
+  About,
+  Contact,
+  Courses,
+  Divider,
+  Intro,
+  Projects,
+  Skills,
+  WhatsApp,
+} from '@/components'
 
 export default function Home() {
   return (
@@ -10,6 +18,8 @@ export default function Home() {
       <Projects />
       <Skills />
       <Courses />
+      <Contact />
+      <WhatsApp />
     </main>
   )
 }

@@ -11,7 +11,7 @@ import { useSectionInView } from '@/hooks/useSectionInView'
 function Courses() {
   const { ref } = useSectionInView('Courses')
   return (
-    <section id="courses" ref={ref}>
+    <section id="courses" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
       <Heading>Courses</Heading>
       <VerticalTimeline>
         {coursesData.map((course, index) => (
