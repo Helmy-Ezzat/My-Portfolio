@@ -1,5 +1,6 @@
 export { default as BackgroundDecorations } from './BackgroundDecorations'
 export { default as Header } from './Header'
+export { default as NavbarBackground } from './NavbarBackground '
 export { default as Heading } from './Heading'
 export { default as Intro } from './Intro'
 export { default as Divider } from './Divider'
