@@ -22,8 +22,8 @@ export const links = [
     hash: '#skills',
   },
   {
-    name: 'Experience',
-    hash: '#experience',
+    name: 'Courses',
+    hash: '#courses',
   },
   {
     name: 'Contact',
@@ -31,7 +31,7 @@ export const links = [
   },
 ] as const
 
-export const experiencesData = [
+export const coursesData = [
   {
     title: 'Graduated bootcamp',
     location: 'Miami, FL',
