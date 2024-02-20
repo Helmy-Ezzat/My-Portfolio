@@ -8,7 +8,7 @@ function WhatsApp() {
   return (
     <>
       {activeSection === 'Contact' && (
-        <WhatsAppWidget companyName="Helmy Ezzat" phoneNumber="01011839745" />
+        <WhatsAppWidget companyName="Helmy Ezzat" phoneNumber="+201094454045" />
       )}
     </>
   )
