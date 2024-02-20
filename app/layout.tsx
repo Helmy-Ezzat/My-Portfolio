@@ -5,7 +5,6 @@ import {
   BackgroundDecorations,
   Footer,
   Header,
-  ThemeSwitch,
 } from '@/components'
 import ActiveSectionContextProvider from '@/context/activeSection'
 import ThemeContextProvider from '@/context/theme'
@@ -25,7 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${inter.className} pt-28 sm:pt-36 bg-gray-50 text-gray-950 relative`}
+        className={`
+        ${inter.className} pt-28 sm:pt-36 bg-gray-50 text-gray-950 relative
+         dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
       >
         <BackgroundDecorations />
         <ThemeContextProvider>

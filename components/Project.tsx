@@ -39,7 +39,8 @@ function Project({
       relative max-w-[42rem] bg-gray-100
       border border-black/5 rounded-lg overflow-hidden
       sm:pr-8 sm:h-[20rem] sm:group-even:pl-8
-      hover:bg-gray-200 transition"
+      hover:bg-gray-200 transition
+      dark:text-white dark:bg-white/10 dark:hover:bg-white/20"
         onMouseEnter={() => setShowButtons(true)}
         onMouseLeave={() => setShowButtons(false)}
       >
@@ -49,13 +50,15 @@ function Project({
         sm:max-w-[50%] flex flex-col h-full
         sm:group-even:ml-[18rem]"
         >
-          <h3 className="text-2xl font-semibold">{title}</h3>
-          <p className="mt-2 leading-relaxed text-gray-700">{description}</p>
+          <h3 className="text-2xl font-semibold dark:text-white/90">{title}</h3>
+          <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
+            {description}
+          </p>
           <ul className="flex flex-wrap gap-2 mt-2 sm:mt-auto group-hover:opacity-0">
             {tags.map((tag, index) => (
               <li
                 key={index}
-                className="bg-black/[0.7] text-white text-[0.7rem] px-3 py-1 rounded-full uppercase tracking-wider"
+                className="bg-black/[0.7] text-white text-[0.7rem] px-3 py-1 rounded-full uppercase tracking-wider dark:text-white/70"
               >
                 {tag}
               </li>
@@ -94,16 +97,17 @@ function Project({
             <a
               className="
               bg-black text-white rounded-full
-              focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer"
+              focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer
+              "
               href={githubRepo}
               target="_blank"
             >
-              <FaCode className="w-[3rem] h-[3rem] text-2xl p-3  " />
+              <FaCode className="w-[3rem] h-[3rem] text-2xl p-3" />
             </a>
             <a
               className="
               bg-white text-black rounded-full
-              focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer"
+              focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer dark:bg-white/80"
               href={demo}
               target="_blank"
             >

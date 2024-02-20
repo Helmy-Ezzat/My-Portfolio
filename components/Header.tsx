@@ -35,9 +35,10 @@ function Header() {
               <Link
                 href={link.hash}
                 className={clsx(
-                  'px-3 py-3 w-full flex items-center justify-center hover:text-gray-950 transition',
+                  'px-3 py-3 w-full flex items-center justify-center hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300',
                   {
-                    'text-gray-950': activeSection === link.name,
+                    'text-gray-950 dark:text-gray-200':
+                      activeSection === link.name,
                   }
                 )}
                 onClick={() => {
@@ -48,7 +49,7 @@ function Header() {
                 {link.name}
                 {link.name === activeSection && (
                   <motion.span
-                    className="bg-gray-100 rounded-full absolute inset-0 -z-10"
+                    className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-400 dark:bg-opacity-20"
                     layoutId="activeSection"
                     transition={{
                       type: 'spring',
