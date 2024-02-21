@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { FaCode } from 'react-icons/fa6'
 import { GoEye } from 'react-icons/go'
+import { RiSlideshow3Line } from 'react-icons/ri'
 
 type ProjectProps = (typeof projectsData)[number]
 function Project({
@@ -35,15 +36,40 @@ function Project({
       }}
     >
       <section
-        className="
-      relative max-w-[42rem] bg-gray-100
+        className="relative
+       max-w-[42rem] bg-gray-100
       border border-black/5 rounded-lg overflow-hidden
       sm:pr-8 sm:h-[20rem] sm:group-even:pl-8
       hover:bg-gray-200 transition
       dark:text-white dark:bg-white/10 dark:hover:bg-white/20"
+        onTouchStart={() => {
+          setShowButtons(true)
+          setTimeout(() => {
+            setShowButtons(false)
+          }, 4000)
+        }}
         onMouseEnter={() => setShowButtons(true)}
         onMouseLeave={() => setShowButtons(false)}
       >
+        <Image
+          src={imageUrl}
+          alt="Project I worked on"
+          quality={95}
+          className="
+        sm:absolute  top-8 -right-40 sm:w-[28.25rem] rounded-t-lg shadow-2xl
+        sm:group-hover:scale-[1.04]
+        sm:group-hover:-translate-x-3
+        sm:group-hover:translate-y-3
+        sm:group-hover:-rotate-2
+        
+        group-even:right-[initial] group-even:-left-40
+        sm:group-even:group-hover:translate-x-3
+        sm:group-even:group-hover:translate-y-3
+        sm:group-even:group-hover:rotate-2
+    
+        transition
+        "
+        />
         <div
           className="
         pt-7 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-0
@@ -54,7 +80,7 @@ function Project({
           <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
             {description}
           </p>
-          <ul className="flex flex-wrap gap-2 mt-2 sm:mt-auto group-hover:opacity-0">
+          <ul className="flex flex-wrap gap-2 mt-2 sm:mt-auto">
             {tags.map((tag, index) => (
               <li
                 key={index}
@@ -65,27 +91,6 @@ function Project({
             ))}
           </ul>
         </div>
-
-        <Image
-          src={imageUrl}
-          alt="Project I worked on"
-          quality={95}
-          className="hidden sm:block
-          absolute top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
-       
-          group-hover:scale-[1.04]
-          group-hover:-translate-x-3
-          group-hover:translate-y-3
-          group-hover:-rotate-2
-          
-          group-even:right-[initial] group-even:-left-40
-          group-even:group-hover:translate-x-3
-          group-even:group-hover:translate-y-3
-          group-even:group-hover:rotate-2
-       
-          transition
-          "
-        />
 
         {showButtons && (
           <motion.div
