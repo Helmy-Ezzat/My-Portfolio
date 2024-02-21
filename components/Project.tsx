@@ -6,7 +6,6 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { FaCode } from 'react-icons/fa6'
 import { GoEye } from 'react-icons/go'
-import { RiSlideshow3Line } from 'react-icons/ri'
 
 type ProjectProps = (typeof projectsData)[number]
 function Project({
