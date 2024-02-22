@@ -31,30 +31,66 @@ export const links = [
   },
 ] as const
 
-export const coursesData = [
+interface Course {
+  title: string
+  location: string
+  description?: string
+  detailsDiploma?: { name: string; proficiency: string }[]
+  icon: React.FunctionComponentElement<any>
+  date: string
+  name?: string
+  proficiency?: string
+}
+export const coursesData: Course[] = [
   {
-    title: 'Graduated bootcamp',
-    location: 'Miami, FL',
-    description:
-      'I graduated after 6 months of studying. I immediately found a job as a front-end developer.',
+    title: 'Programming fundamentals diploma',
+    location: 'Cairo,  Route IT Training Center',
+    description: 'Introduction level:',
+    detailsDiploma: [
+      {
+        name: 'C++',
+        proficiency:
+          'Data types - Operators - If Statement & Switch Case - Loops - 1D/2D Arrays - Functions',
+      },
+      {
+        name: 'OOP',
+        proficiency:
+          'Classes - Objects - Class diagram - Encapsulation - Inheritance - Composition - Function Overloading & Function Overriding - Static Members & Static Methods - Abstraction - Templates - Polymorphism - Pointers - Exceptionhandling',
+      },
+      {
+        name: 'Data Structures and Algorithms',
+        proficiency: 'Stack - Queue',
+      },
+      {
+        name: 'SOLID Principles & Design Patterns',
+        proficiency: 'Introduction',
+      },
+      {
+        name: 'Database',
+        proficiency: 'Introduction',
+      },
+    ],
     icon: React.createElement(LuGraduationCap),
-    date: '2019',
+    date: '2022 - 2023',
   },
   {
-    title: 'Front-End Developer',
-    location: 'Orlando, FL',
-    description:
-      'I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.',
-    icon: React.createElement(CgWorkAlt),
-    date: '2019 - 2021',
-  },
-  {
-    title: 'Full-Stack Developer',
-    location: 'Houston, TX',
-    description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+    title: 'Front-End Developer Bootcamp',
+    location: 'Cairo, Route IT Training Center',
+    description: '',
+    detailsDiploma: [
+      {
+        name: 'Front-end content',
+        proficiency:
+          'HTML - CSS - CSS GRID - CSS FLEX - JavaScript - AsynchronousProgramming - AJAX - TypeScript - Bootstrap5 - JQuery - NPM - Figma - JSON - SASS',
+      },
+      {
+        name: 'React Content',
+        proficiency:
+          'SPA Archticture - React Archticture - Class & Functional components - JSX - tailwindcss - State & Props - Axios - Components Life Cycle - Virtual DOM - React Hooks - Custom Hooks - Routing - Context API - Formik & YUP - Material UI - Online Payment Integration - React-Query - JWT Authentication TypeScript with React - Deployment',
+      },
+    ],
     icon: React.createElement(FaReact),
-    date: '2021 - present',
+    date: '2023 - 2024',
   },
 ] as const
 
@@ -109,4 +145,3 @@ export const skillsData = [
   'Django',
   'Framer Motion',
 ] as const
-

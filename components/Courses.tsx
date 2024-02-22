@@ -8,6 +8,8 @@ import { Heading } from '.'
 import { coursesData } from '@/lib/data'
 import { useSectionInView } from '@/hooks/useSectionInView'
 import { useTheme } from '@/context/theme'
+import { IoLocationOutline } from 'react-icons/io5'
+import { FaLocationDot } from 'react-icons/fa6'
 
 function Courses() {
   const { theme } = useTheme()
@@ -26,7 +28,7 @@ function Courses() {
               boxShadow: 'none',
               border: '1px solid rgba(0, 0, 0, 0.05)',
               textAlign: 'left',
-              padding: '1.3rem 2rem',
+              padding: '1.3rem 1rem',
             }}
             contentArrowStyle={{
               borderRight:
@@ -43,10 +45,24 @@ function Courses() {
             }}
           >
             <h3 className="font-semibold capitalize">{course.title}</h3>
-            <p className="font-normal !mt-0">{course.location}</p>
+            <p className="!text-sm !mt-0 flex gap-2">
+              {' '}
+              <FaLocationDot className="text-green-400" /> {course.location}
+            </p>
             <p className="!mt-1 !font-normal text-gray-700  dark:text-white/75">
               {course.description}
             </p>
+            <ul className="p-3 flex flex-col gap-2">
+              {course.detailsDiploma &&
+                course.detailsDiploma.map((item, index) => (
+                  <li key={index} className="flex flex-col">
+                    <span className="font-semibold text-gray-800 dark:text-white">
+                      {item.name}:
+                    </span>{' '}
+                    <span className="px-5">{item.proficiency}</span>
+                  </li>
+                ))}
+            </ul>
           </VerticalTimelineElement>
         ))}
       </VerticalTimeline>
