@@ -1,48 +1,40 @@
 'use client'
-import { useState } from 'react'
+import { useEffect } from 'react'
 import { Heading } from '.'
 import { useSectionInView } from '@/hooks/useSectionInView'
+import useHandleSubmitAndValidation from '@/hooks/useHandleSubmit'
+import { CgAirplane } from 'react-icons/cg'
+import { PiAirplaneTiltLight } from 'react-icons/pi'
 
 export default function ContactMe() {
   const { ref } = useSectionInView('Contact')
-  
-  const [fullname, setFullname] = useState('')
-  const [email, setEmail] = useState('')
-  const [subject, setSubject] = useState('')
-  const [message, setMessage] = useState('')
+  const {
+    email,
+    errors,
+    fullname,
+    handleSubmit,
+    message,
+    setEmail,
+    setFullname,
+    setMessage,
+    setSubject,
+    subject,
+    pending,
+    showSuccessMessage,
+    setShowSuccessMessage,
+    showFailureMessage,
+  } = useHandleSubmitAndValidation()
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-
-    e.preventDefault()
-
-    //    let isValidForm = handleValidation()
-
-    const res = await fetch('/api/sendgrid', {
-      body: JSON.stringify({
-        email: email,
-        fullname: fullname,
-        subject: subject,
-        message: message,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-    })
-
-    const { error } = await res.json()
-    if (error) {
-      console.log(error)
-      return
-    }
-    console.log(fullname, email, subject, message)
-  }
+  useEffect(() => {
+    const timer = setTimeout(() => setShowSuccessMessage(false), 3000)
+    return () => clearTimeout(timer)
+  }, [showSuccessMessage])
 
   return (
     <section
       ref={ref}
       id="contact"
-      className="mb-20 sm:mb-28 w-[min(100%,38rem)]"
+      className="mb-20 sm:mb-28 w-[min(100%,38rem)] scroll-mt-[5rem] sm:scroll-mt-[8rem]"
     >
       <Heading>Contact me</Heading>
       <p className="text-gray-700 -mt-6  dark:text-white/80 text-center">
@@ -76,6 +68,9 @@ export default function ContactMe() {
           name="fullname"
           className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
         />
+        {errors && errors.fullname && (
+          <div className="text-red-500 text-sm mt-3">{errors.fullname}</div>
+        )}
 
         <label
           htmlFor="email"
@@ -92,6 +87,9 @@ export default function ContactMe() {
           }}
           className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
         />
+        {errors && errors.email && (
+          <div className="text-red-500 text-sm mt-3">{errors.email}</div>
+        )}
 
         <label
           htmlFor="subject"
@@ -108,6 +106,9 @@ export default function ContactMe() {
           }}
           className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
         />
+        {errors && errors.subject && (
+          <div className="text-red-500 text-sm mt-3">{errors.subject}</div>
+        )}
 
         <label
           htmlFor="message"
@@ -123,35 +124,45 @@ export default function ContactMe() {
           }}
           className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
         ></textarea>
+        {errors && errors.message && (
+          <div className="text-red-500 text-sm mt-3">{errors.message}</div>
+        )}
 
-        <div className="flex flex-row items-center justify-start">
-          <button
-            type="submit"
-            // className="px-10 mt-8 py-2 bg-[#130F49] text-gray-50 font-light rounded-md text-lg flex flex-row items-center"
-            className="group mt-8
-    flex items-center justify-center gap-2 bg-gray-900 text-white
-    h-[3rem] w-[8rem] rounded-full outline-none transition-all
-    focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105
-    disabled:scale-100 disabled:bg-opacity-65
-    dark:bg-white/30 dark:bg-opacity-10"
-          >
-            Submit
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              //   className="text-cyan-500 ml-2"
-              className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:scale-20"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9.00967 5.12761H11.0097C12.1142 5.12761 13.468 5.89682 14.0335 6.8457L16.5089 11H21.0097C21.562 11 22.0097 11.4477 22.0097 12C22.0097 12.5523 21.562 13 21.0097 13H16.4138L13.9383 17.1543C13.3729 18.1032 12.0191 18.8724 10.9145 18.8724H8.91454L12.4138 13H5.42485L3.99036 15.4529H1.99036L4.00967 12L4.00967 11.967L2.00967 8.54712H4.00967L5.44417 11H12.5089L9.00967 5.12761Z"
-                fill="currentColor"
-              />
-            </svg>
-          </button>
-        </div>
+        <button
+          type="submit"
+          className="group mt-8
+            flex items-center justify-center gap-2 bg-gray-900 text-white
+            h-[3rem] w-[8rem] rounded-full outline-none transition-all
+            focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105
+            disabled:scale-100 disabled:bg-opacity-65
+           dark:bg-white/30 dark:bg-opacity-10"
+          disabled={pending}
+        >
+          {pending ? (
+            <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white disabled:scale-100 disabled:bg-opacity-65"></div>
+          ) : (
+            <div className="flex gap-2 items-center justify-center">
+              Submit
+              <PiAirplaneTiltLight className="text-2xl opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
+              {/* <airplaneIcon/> */}
+            </div>
+          )}
+        </button>
+
+        {showSuccessMessage && (
+          <div>
+            <p className="text-green-500 text-center mt-1">
+              Thankyou! Your Message has been delivered.👍🎉
+            </p>
+          </div>
+        )}
+        {showFailureMessage && (
+          <div>
+            <p className="text-red-500 text-center mt-1">
+              Error! Failed to deliver the message. 😞
+            </p>
+          </div>
+        )}
       </form>
     </section>
   )
