@@ -1,6 +1,6 @@
 import {
   About,
-  Contact,
+  ContactMe,
   Courses,
   Divider,
   Intro,
@@ -9,6 +9,7 @@ import {
   ThemeSwitch,
   WhatsApp,
 } from '@/components'
+
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
       <Projects />
       <Skills />
       <Courses />
-      <Contact />
+      <ContactMe />
       <WhatsApp />
       <ThemeSwitch />
     </main>
