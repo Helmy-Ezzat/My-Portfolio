@@ -22,7 +22,6 @@ type ContactFormEmailProps = {
 export default function ContactFormEmail({
   fullname,
   email,
-  subject,
   message,
 }: ContactFormEmailProps) {
   return (
