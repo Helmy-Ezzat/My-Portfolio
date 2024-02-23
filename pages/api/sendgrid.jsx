@@ -2,7 +2,7 @@ import ContactFormEmail from '@/email/ContactFormEmail'
 import { renderToString } from 'react-dom/server'
 import sendgrid from '@sendgrid/mail'
 
-sendgrid.setApiKey(process.env.SEND_API_KEY)
+sendgrid.setApiKey('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')
 
 async function sendEmail(req, res) {
   try {
