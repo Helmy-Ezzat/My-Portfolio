@@ -8,7 +8,7 @@ type SectionName = (typeof links)[number]['name']
 
 export const useSectionInView = (
   sectionName: SectionName,
-  threshold = 0.75
+  threshold = 0.100
 ) => {
   const { ref, inView } = useInView({ threshold })
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext()
