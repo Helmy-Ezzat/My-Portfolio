@@ -96,28 +96,10 @@ export const coursesData: Course[] = [
 
 export const projectsData = [
   {
-    title: 'CorpComment',
+    title: 'Market-Estate',
     description:
-      'I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.',
-    tags: ['React', 'Next.js', 'MongoDB', 'Tailwind', 'Prisma'],
-    imageUrl: realEstate,
-    githubRepo: 'https://github.com/Helmy-Ezzat/market-estate',
-    demo: 'https://market-estate.onrender.com/',
-  },
-  {
-    title: 'rmtDev',
-    description:
-      'Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.',
-    tags: ['React', 'TypeScript', 'Next.js', 'Tailwind', 'Redux'],
-    imageUrl: realEstate,
-    githubRepo: 'https://github.com/Helmy-Ezzat/market-estate',
-    demo: 'https://market-estate.onrender.com/',
-  },
-  {
-    title: 'Word Analytics',
-    description:
-      'A public web app for quick analytics on text. It shows word count, character count and social media post limits.',
-    tags: ['React', 'Next.js', 'SQL', 'Tailwind', 'Framer'],
+      '"Market-Estate" is a full-stack web application developed using the MERN stack, which stands for MongoDB, Express.js, React, and Node.js. It is designed to provide a platform for real estate management, allowing users to browse, search, and list properties.',
+    tags: ['React', 'Tailwind', 'MongoDB', 'Express'],
     imageUrl: realEstate,
     githubRepo: 'https://github.com/Helmy-Ezzat/market-estate',
     demo: 'https://market-estate.onrender.com/',
