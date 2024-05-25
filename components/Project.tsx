@@ -76,7 +76,7 @@ function Project({
         sm:group-even:ml-[18rem]"
         >
           <h3 className="text-2xl font-semibold dark:text-white/90">{title}</h3>
-          <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
+          <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70 mb-2">
             {description}
           </p>
           <ul className="flex flex-wrap gap-2 mt-2 sm:mt-auto">
