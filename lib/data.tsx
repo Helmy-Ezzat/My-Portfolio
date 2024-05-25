@@ -71,6 +71,7 @@ export const coursesData: Course[] = [
         name: 'Database',
         proficiency: 'Fundamentals',
       },
+  
     ],
     icon: React.createElement(LuGraduationCap),
     date: '2022 - 2023',
