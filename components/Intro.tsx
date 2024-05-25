@@ -116,7 +116,7 @@ function Intro() {
         </a>
         <div className="flex gap-2">
           <a
-            href="https://www.linkedin.com/in/helmy-ezzat-72a097245/"
+            href="https://www.linkedin.com/in/helmy-ezzat-b38722274/"
             target="_blank"
             className="
         bg-white p-4 text-gray-700 rounded-full

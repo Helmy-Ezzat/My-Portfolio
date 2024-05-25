@@ -1,8 +1,10 @@
 import React from 'react'
 import { CgWorkAlt } from 'react-icons/cg'
-import { FaReact } from 'react-icons/fa'
+import { FaGithubSquare, FaReact } from 'react-icons/fa'
 import { LuGraduationCap } from 'react-icons/lu'
 import realEstate from '@/public/real-estate.png'
+import productdetails from '@/public/productdetails.png'
+import X from '@/public/x.png'
 
 export const links = [
   {
@@ -39,35 +41,35 @@ interface Course {
   icon: React.FunctionComponentElement<any>
   date: string
   name?: string
-  proficiency?: string
+  proficiency?: String 
 }
 export const coursesData: Course[] = [
   {
     title: 'Programming fundamentals diploma',
     location: 'Cairo,  Route IT Training Center',
-    description: 'Introduction level:',
+    description: 'Core Topics Covered:',
     detailsDiploma: [
       {
         name: 'C++',
         proficiency:
-          'Data types - Operators - If Statement & Switch Case - Loops - 1D/2D Arrays - Functions',
+          'Data types, Operators, Control Structures, Arrays, Functions',
       },
       {
-        name: 'OOP',
+        name: 'Object-Oriented Programming (OOP)',
         proficiency:
-          'Classes - Objects - Class diagram - Encapsulation - Inheritance - Composition - Function Overloading & Function Overriding - Static Members & Static Methods - Abstraction - Templates - Polymorphism - Pointers - Exceptionhandling',
+          'Classes, Inheritance, Polymorphism, Encapsulation, Abstraction',
       },
       {
         name: 'Data Structures and Algorithms',
-        proficiency: 'Stack - Queue',
+        proficiency: 'Stack, Queue',
       },
       {
         name: 'SOLID Principles & Design Patterns',
-        proficiency: 'Introduction',
+        proficiency: 'Basic Concepts',
       },
       {
         name: 'Database',
-        proficiency: 'Introduction',
+        proficiency: 'Fundamentals',
       },
     ],
     icon: React.createElement(LuGraduationCap),
@@ -76,7 +78,7 @@ export const coursesData: Course[] = [
   {
     title: 'Front-End Developer Bootcamp',
     location: 'Cairo, Route IT Training Center',
-    description: '',
+    description: 'Core Topics Covered:',
     detailsDiploma: [
       {
         name: 'Front-end content',
@@ -96,13 +98,31 @@ export const coursesData: Course[] = [
 
 export const projectsData = [
   {
+    title: 'Fresh-Cart',
+    description: 'An e-commerce application utilizing React.',
+    tags: ['React', 'Bootstrap', 'React-Query', 'Axios', 'Formik', 'Yup'],
+    imageUrl: productdetails,
+    githubRepo: 'https://github.com/Helmy-Ezzat/Fresh-Cart',
+    demo: 'https://fresh-cart-sage-psi.vercel.app/login',
+  },
+
+  {
     title: 'Market-Estate',
     description:
-      '"Market-Estate" is a full-stack web application developed using the MERN stack, which stands for MongoDB, Express.js, React, and Node.js. It is designed to provide a platform for real estate management, allowing users to browse, search, and list properties.',
+      '"Market-Estate" is a MERN stack web app for real estate management, enabling users to browse, search, and list properties.',
     tags: ['React', 'Tailwind', 'MongoDB', 'Express'],
     imageUrl: realEstate,
     githubRepo: 'https://github.com/Helmy-Ezzat/market-estate',
     demo: 'https://market-estate.onrender.com/',
+  },
+  {
+    title: 'X-Clone',
+    description:
+      '"x-clone" is a cutting-edge web application designed for seamless account creation and login experiences.',
+    tags: ['React', 'Tailwind', 'MongoDB', 'Express'],
+    imageUrl: X,
+    githubRepo: 'https://github.com/Helmy-Ezzat/X-clone',
+    demo: 'https://x-clone-vvnc.onrender.com/',
   },
 ] as const
 
@@ -121,8 +141,10 @@ export const skillsData = [
   'chakra ui',
   'Redux',
   'Redux Toolkit',
+  'React Query',
   'Framer Motion',
   'Formik',
   'Yup',
   'MongoDB',
+  'Express',
 ] as const
