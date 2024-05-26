@@ -103,7 +103,7 @@ function Intro() {
           <BsArrowRight className="group-hover:translate-x-1 opacity-70 transition" />
         </Link>
         <a
-          href="/CV.pdf"
+          href={'https://drive.google.com/file/d/1Uub9nv5WPKNs1VnuT1NfENFOFA4bicl-/view?usp=drive_link'}
           target="_blank"
           className="group
         flex items-center gap-2 bg-white
